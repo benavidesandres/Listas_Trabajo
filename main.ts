@@ -41,7 +41,7 @@ class Restaurante {
     const p = this.buscar(nombre);
     if (!p) return { ok: false, msg: `"${nombre}" no existe` };
     p.precio = nuevoPrecio;
-    return { ok: true, msg: `"${nombre}" actualizado a $${nuevoPrecio.toLocaleString()} ✏️` };
+    return { ok: true, msg: `"${nombre}" actualizado a $${nuevoPrecio.toLocaleString()} ` };
   }
 
   ordenar(): string {
