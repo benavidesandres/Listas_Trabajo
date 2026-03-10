@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Pedidos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1> Pedidos</h1>
+    <p>fastfood</p>
+  </header>
+
+  <div class="app">
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-label">Pedidos</div>
+        <div class="stat-value" id="stat-count">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total</div>
+        <div class="stat-value" id="stat-total">$0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Promedio</div>
+        <div class="stat-value" id="stat-avg">$0</div>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="panel">
+      <h2> Nuevo pedido</h2>
+
+      <div class="field">
+        <label for="nombre">Nombre del plato</label>
+        <input type="text" id="nombre" placeholder="ej. Bandeja paisa...">
+      </div>
+      <div class="field">
+        <label for="precio">Precio</label>
+        <input type="number" id="precio" placeholder="ej. 25000" min="0">
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-add"      id="btn-agregar">  Agregar</button>
+        <button class="btn btn-search"   id="btn-buscar">    Buscar</button>
+        <button class="btn btn-edit"     id="btn-modificar"> Modificar</button>
+        <button class="btn btn-delete"   id="btn-eliminar">  Eliminar</button>
+        <button class="btn btn-sort"     id="btn-ordenar">   Ordenar por precio</button>
+      </div>
+    </div>
+
+    <!-- Lista -->
+    <div class="list-panel">
+      <div class="list-header">
+        <h2> En curso</h2>
+        <span class="badge" id="badge">0 ítems</span>
+      </div>
+
+      <div id="empty">
+        <span class="emoji"></span>
+        Todavía no hay nada por aquí...
+      </div>
+
+      <ul id="lista"></ul>
+    </div>
+
+  </div>
+
+  <div id="toasts"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
