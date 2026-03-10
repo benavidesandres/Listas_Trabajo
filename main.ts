@@ -123,8 +123,8 @@ function render(): void {
 function agregar(): void {
   const nombre = input("nombre");
   const precio = parseFloat((document.getElementById("precio") as HTMLInputElement).value);
-  if (!nombre) { toast("Escribe un nombre 👀", "err"); return; }
-  if (isNaN(precio) || precio <= 0) { toast("Precio inválido 😬", "err"); return; }
+  if (!nombre) { toast("Escribe un nombre ", "err"); return; }
+  if (isNaN(precio) || precio <= 0) { toast("Precio inválido ", "err"); return; }
   toast(restaurante.agregar(new Pedido(nombre, precio)), "ok");
   clearInputs();
   render();
@@ -132,11 +132,11 @@ function agregar(): void {
 
 function buscar(): void {
   const nombre = input("nombre");
-  if (!nombre) { toast("¿Qué buscas? 🤔", "err"); return; }
+  if (!nombre) { toast("¿Qué buscas? ", "err"); return; }
   const p = restaurante.buscar(nombre);
   p
-    ? toast(`Encontrado: ${p.nombre} — $${p.precio.toLocaleString("es-CO")} ✅`, "info")
-    : toast(`"${nombre}" no está aquí 🤷`, "err");
+    ? toast(`Encontrado: ${p.nombre} — $${p.precio.toLocaleString("es-CO")} `, "info")
+    : toast(`"${nombre}" no está aquí `, "err");
 }
 
 function eliminar(): void {
